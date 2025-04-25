@@ -136,5 +136,70 @@ public class Archaga_Aaron_Formulas {
         double resultadoh = ((ah * ah)/(bh * bh)) +  ((ch * ch)/(dh * dh));
         System.out.println("La formula es: ("+ah+"^2 /"+bh+"^2 ) +"+"("+ch+"^2 /"+dh+"^2 )");
         System.out.println("El resultado es: "+resultadoh);
+        
+        //Ejercicio I
+        System.out.println("Ejercicio I");
+        System.out.println("Ingrese el valor de m:");
+        int mi = entrada.nextInt();
+        System.out.println("Ingrese el valor de n:");
+        int ni = entrada.nextInt();
+        System.out.println("Ingrese el valor de p: ");
+        int pi = entrada.nextInt();
+        System.out.println("Ingrese el valor de q:");
+        int qi = entrada.nextInt();
+        System.out.println("Ingrese el valor de r: ");
+        int ri = entrada.nextInt();
+        System.out.println("Ingrese el valor de s:");
+        int si = entrada.nextInt();
+        
+        double resultadoi = (mi + (ni/pi)) / (qi - (ri/si));
+        System.out.println("La formula es: ("+mi+"+("+ni+"/"+pi+") / ("+qi+"-("+ri+"/"+si+")");
+        System.out.println("El resultado es: "+resultadoi);
+        
+        //Ejercicio J
+        System.out.println("Ejercicio J");
+        System.out.println("Ingrese el valor de el numerador 1: ");
+        int num1j = entrada.nextInt();
+        System.out.println("Ingrese el valor de el numerador 2: ");
+        int num2j = entrada.nextInt();
+        System.out.println("Ingrese el valor de el denominafor 1: ");
+        int dom1j = entrada.nextInt();
+        System.out.print("Ingrese el valor de a: ");
+        int aj = entrada.nextInt();
+        System.out.print("Ingrese el valor de b: ");
+        int bj = entrada.nextInt();
+        System.out.print("Ingrese el valor de c: ");
+        int cj = entrada.nextInt();
+        System.out.print("Ingrese el valor de d: ");
+        int dj = entrada.nextInt();
+        System.out.print("Ingrese el valor de e: ");
+        int ej = entrada.nextInt();
+        System.out.print("Ingrese el valor de f: ");
+        int fj = entrada.nextInt();
+        System.out.print("Ingrese el valor de g: ");
+        int gj = entrada.nextInt();
+        System.out.print("Ingrese el valor de h: ");
+        int hj = entrada.nextInt();
+        
+        double resultadoj = ((num1j * aj) + bj) / (cj - (dj + (num2j * ej) / fj + (gj / (dom1j * hj))));
+        System.out.println("La formula es: ");
+        System.out.println("El resultado es: "+resultadoj);
+        
+        //Ejercicio K
+        System.out.println("Ejercicio K");
+        System.out.println("Ingrese el valor de a: ");
+        int ak = entrada.nextInt();
+        System.out.println("Ingrese el valor de b: ");
+        int bk = entrada.nextInt();
+        System.out.println("Ingrese el valor de x: ");
+        int xk = entrada.nextInt();
+        System.out.println("Ingrese el numerador 1: ");
+        int num1k = entrada.nextInt();
+        System.out.println("Ingrese el numerador 2: ");
+        int num2k = entrada.nextInt();
+        
+        double resultadok = ((ak * ak) + (2 * ak * bk) + (bk * bk)) / ((num1k / (xk *xk)) + num2k);
+        System.out.println("La formula es: ("+ak+"*"+ak+"2"+ak+"*"+bk+"+"+bk+"*"+bk+")/("+num1k+"/("+xk+"*"+xk+")+"+num2k+")");
+        System.out.println("El resultado es: "+resultadok);
     }
 }
