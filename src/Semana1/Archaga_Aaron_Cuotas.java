@@ -24,15 +24,12 @@ public class Archaga_Aaron_Cuotas {
         comisiontasa = entrada.nextDouble();
         comisiontasa = comisiontasa / 100;
         
-        
-        
         //Calculos
         interes = prestamo * interestasa * plazomeses;
         seguro = prestamo * segurotasa * plazomeses;
         comision = prestamo * comisiontasa;
         cuotamensual = interes + seguro + comision + (prestamo/plazomeses);
         totalpagar = cuotamensual * plazomeses;
-        
         
         //Salida
         System.out.println("---CUOTAS MENSUALES---");

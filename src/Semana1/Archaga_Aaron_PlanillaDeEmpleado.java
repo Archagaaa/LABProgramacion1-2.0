@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Archaga_Aaron_PlanillaDeEmpleado {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in).useDelimiter("\n");
         
         //Variables
         String nombre;
         double horas, tarifa, salario, salariosemanal;
         
         System.out.println("Ingrese su nombre y apellido: ");
-        nombre = entrada.nextLine();
+        nombre = entrada.next();
         System.out.println("Ingrese la cantidad de horas laboradas este mes: ");
         horas = entrada.nextDouble();
         System.out.println("Ingrese la tarifa por hora: ");
