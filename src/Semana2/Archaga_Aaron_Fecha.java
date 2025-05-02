@@ -14,16 +14,14 @@ public class Archaga_Aaron_Fecha {
         System.out.println("Ingrese la segunda fecha (DD/MM/AAAA): ");
         fecha2 = entrada.nextLine();
 
-        int dia1, mes1, anio1, dia2, mes2, anio2, diferencia;
-
         // Hacer que solo lea los numeros de la primer fecha
         int linea1_fecha1 = fecha1.indexOf("/");
         int linea2_fecha1 = fecha1.indexOf("/", linea1_fecha1 + 1);
 
         // Leer primer fecha
-        dia1 = Integer.parseInt(fecha1.substring(0, linea1_fecha1));
-        mes1 = Integer.parseInt(fecha1.substring(linea1_fecha1 + 1, linea2_fecha1));
-        anio1 = Integer.parseInt(fecha1.substring(linea2_fecha1 + 1));
+        int dia1 = Integer.parseInt(fecha1.substring(0, linea1_fecha1));
+        int mes1 = Integer.parseInt(fecha1.substring(linea1_fecha1 + 1, linea2_fecha1));
+        int anio1 = Integer.parseInt(fecha1.substring(linea2_fecha1 + 1));
 
 
         // Hacer que solo lea los numeros de la segunda fecha
@@ -31,20 +29,18 @@ public class Archaga_Aaron_Fecha {
         int linea2_fecha2 = fecha2.indexOf("/", linea1_fecha2 + 1);
 
         // Leer la segunda fecha
-        dia2 = Integer.parseInt(fecha2.substring(0, linea1_fecha2));
-        mes2 = Integer.parseInt(fecha2.substring(linea1_fecha2 + 1, linea2_fecha2));
-        anio2 = Integer.parseInt(fecha2.substring(linea2_fecha2 + 1));
+        int dia2 = Integer.parseInt(fecha2.substring(0, linea1_fecha2));
+        int mes2 = Integer.parseInt(fecha2.substring(linea1_fecha2 + 1, linea2_fecha2));
+        int anio2 = Integer.parseInt(fecha2.substring(linea2_fecha2 + 1));
 
         // Hacer los calculos
         int resultadofecha1 = anio1 * 360 + mes1 * 30 + dia1;
         int resultadofecha2 = anio2 * 360 + mes2 * 30 + dia2;
-        diferencia = resultadofecha2 - resultadofecha1;
+        int diferencia = resultadofecha2 - resultadofecha1;
 
         // Salidas
         System.out.println("Fecha 1: " + fecha1);
         System.out.println("Fecha 2: " + fecha2);
         System.out.println("La diferencia de dias es: " + diferencia);
-
-        entrada.close();
     }
 }
