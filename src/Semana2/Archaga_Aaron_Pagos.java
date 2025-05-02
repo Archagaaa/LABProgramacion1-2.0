@@ -72,7 +72,7 @@ public class Archaga_Aaron_Pagos {
         }
         
         else{
-            System.out.println("Categoria no valida");
+            System.out.println("Categoria no valida.");
         }
     }
 }
