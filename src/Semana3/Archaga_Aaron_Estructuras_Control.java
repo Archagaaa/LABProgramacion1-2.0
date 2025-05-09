@@ -24,8 +24,22 @@ public class Archaga_Aaron_Estructuras_Control {
                 case 1:
                     System.out.println("=== PALABRA ALREVES ===");
                     System.out.println("Ingrese la cantidad de palabras: ");
-                    int cantidadpalabras = entrada.nextInt();
+                    int cantidad = entrada.nextInt();
+                    String palabra = "", palabrareves = "";
                     
+                    for (int i = 1; i <= cantidad; i++) {
+                        System.out.println("Ingrese la palabra: "+cantidad+" ");
+                        palabra = entrada.next().toLowerCase();
+                    }
+                    
+                    int recorrido = palabra.length() - 1;
+                    
+                    while(recorrido >= 0){
+                        palabrareves += palabra.charAt(recorrido);
+                        recorrido--;
+                    }
+                    
+                    System.out.println(palabrareves);
                     contreves++;
                     
                     break;
