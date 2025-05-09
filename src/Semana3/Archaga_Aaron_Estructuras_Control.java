@@ -23,13 +23,28 @@ public class Archaga_Aaron_Estructuras_Control {
             switch (opcion){
                 case 1:
                     System.out.println("=== PALABRA ALREVES ===");
-                
+                    
                     contreves++;
                     break;
                 case 2:
                     System.out.println("=== NUMERO PERFECTO ===");
-                
-                    contperfecto++;
+                    System.out.println("Ingrese el numero: ");
+                    int numero = entrada.nextInt();
+                    int suma = 0;
+                    
+                    for (int divisores = 1; divisores < numero; divisores++) { //se divide desde 1 hasta el numero ingresado
+                        if (numero % divisores == 0) {
+                            suma = suma + divisores; //Si es divisor se le suma
+                        }
+                    }
+                    if (suma == numero) { //Si el numero es igual a la suma de sus divisores entonces es perfecto
+                        System.out.println("El numero "+numero+" es perfecto");
+                    }
+                    else {
+                        System.out.println("El numero "+numero+" no es pefecto");
+                    }
+                    
+                    contperfecto++; //contador para mostrar al salir del programa
                     break;
                 
                 case 3:
@@ -38,7 +53,6 @@ public class Archaga_Aaron_Estructuras_Control {
                     int numrandom = random.nextInt(100); //Genera el numero aleatorio del 0-100
                     int divisores = 0;
                    
-                    
                     for (int i = 1; i <= numrandom; i++) {
                         //Verifica si el numero generado es divisor del numero random
                         if(numrandom % i == 0){
@@ -54,6 +68,7 @@ public class Archaga_Aaron_Estructuras_Control {
                     else {
                         System.out.println("El "+numrandom+ " no es primo");
                     }
+                    
                     contprimos++; //contador para mostrar al salir del programa
                     break;
 
