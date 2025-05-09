@@ -11,20 +11,23 @@ public class Archaga_Aaron_Estructuras_Control {
         
         do {
             
-            System.out.println("=== MENU ===");
-            System.out.println("1. Palabras alreves");
-            System.out.println("2. Numero Perfecto");
-            System.out.println("3. Numeros Primos");
-            System.out.println("4. Votaciones");
-            System.out.println("5. Salir");
-            System.out.print("Ingrese un numero: ");
+            System.out.println("=== MENU ==="+
+                            "\n1. Palabras alreves"+
+                            "\n2. Numero Perfecto"+
+                            "\n3. Numeros Primos"+
+                            "\n4. Votaciones"+
+                            "\n5. Salir"+
+                            "\nIngrese un numero: ");
             opcion = entrada.nextInt();
             
             switch (opcion){
                 case 1:
                     System.out.println("=== PALABRA ALREVES ===");
+                    System.out.println("Ingrese la cantidad de palabras: ");
+                    int cantidadpalabras = entrada.nextInt();
                     
                     contreves++;
+                    
                     break;
                 case 2:
                     System.out.println("=== NUMERO PERFECTO ===");
@@ -74,8 +77,81 @@ public class Archaga_Aaron_Estructuras_Control {
 
                 case 4:
                     System.out.println("=== VOTACIONES ===");
-
-                    contvotaciones++;
+                    System.out.print("Ingrese cuantos votantes hay en el pais:");
+                    int votantes = entrada.nextInt();
+                    int contvotoazul = 0, contvotorojo = 0, contvotonegro = 0, contvotoamarillo = 0, votosvalidos = 0;
+                    
+                    //Menu para votar hasta que se terminen los votantes
+                    for (int contador = 1; contador <= votantes; contador++) {
+                        System.out.println("=== PLANILLAS ==="+
+                                        "\n 1. AZUL"+
+                                        "\n 2. ROJO"+
+                                        "\n 3. NEGRO"+
+                                        "\n 4. AMARILLO");
+                        System.out.println("Escriba por quien votara: ");
+                        String voto = entrada.next().toLowerCase();
+                        
+                        //Switch case para poder contar los votos ingresados
+                        switch (voto){
+                            case "azul":
+                                contvotoazul++;
+                                votosvalidos++;
+                                break;
+                            case "rojo":
+                                contvotorojo++;
+                                votosvalidos++;
+                                break;
+                            case "negro":
+                                contvotonegro++;
+                                votosvalidos++;
+                                break;
+                            case "amarillo":
+                                contvotoamarillo++;
+                                votosvalidos++;
+                                break;
+                            default:
+                                System.out.println("Voto no valido");
+                        }
+                    }
+                    
+                    //Ver el porcentaje de votos validos
+                    double votosvalidostotales = (votosvalidos * 100) / votantes;
+                    
+                    String ganador = "";
+                    int contvotoganador = 0; //contador de votos totales de la planilla ganadora
+                    
+                    //Votacion fallida si los votos validos son menor al 60%
+                    if(votosvalidostotales < 60){
+                        System.out.println("VOTACION FALLIDA");
+                    }
+                    //Si son mayor a 60% se empieza a buscar al ganador
+                    else{
+                        //Verificar si gano el azul siendo mayor a todos los demas votos
+                        if (contvotoazul > contvotorojo && contvotoazul > contvotonegro && contvotoazul > contvotoamarillo) {
+                            ganador = "azul";
+                            contvotoganador = contvotoazul;
+                        }
+                        //Verificar si gano el rojo siendo mayor a todos los demas votos
+                        if (contvotorojo > contvotoazul && contvotorojo > contvotonegro && contvotorojo > contvotoamarillo) {
+                            ganador = "rojo";
+                            contvotoganador = contvotorojo;
+                        }
+                        //Verificar si gano el negro siendo mayor a todos los demas votos
+                        if (contvotonegro > contvotoazul && contvotonegro > contvotorojo && contvotonegro > contvotoamarillo) {
+                            ganador = "negro";
+                            contvotoganador = contvotonegro;
+                        }
+                        //Verificar si gano el amarillo siendo mayor a todos los demas votos
+                        if (contvotoamarillo > contvotoazul && contvotoamarillo > contvotorojo && contvotoamarillo > contvotonegro) {
+                            ganador = "amarillo";
+                            contvotoganador = contvotoamarillo;
+                        }
+                    }
+                    //Mostrar quien gano
+                    System.out.println("Gano la planilla "+ganador);
+                    System.out.println("Con la cantidad de "+contvotoganador+" votos");
+                    
+                    contvotaciones++; //contador para mostrar al salir del programa
                     break;
                 case 5:
                     System.out.println("Entro "+contreves+" veces a palabras alreves");
